@@ -22,7 +22,6 @@ echo ""
 echo "Timestamp" && date
 make -j8 | grep Built
 # check for custom.hs
-ls -l
 make install > installed_files
 
 # if test "$RUN_TESTS" = true; then

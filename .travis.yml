@@ -157,5 +157,4 @@ after_script:
 
 branches:
   only:
-    - master
-    - /^review/
+    - travisBuild
