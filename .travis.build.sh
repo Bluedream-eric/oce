@@ -1,5 +1,4 @@
 #! /bin/sh
-set -e
 
 
 #  Default values
@@ -21,6 +20,7 @@ cmake -DBUILD_WITH_DEBUG:BOOL=OFF \
 echo ""
 echo "Timestamp" && date
 make -j8 | grep Built
+cat src/TKernel/cotire/TKernel_CXX_prefix.cxx
 # check for custom.hs
 make install > installed_files
 
