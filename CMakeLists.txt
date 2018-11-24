@@ -50,7 +50,7 @@ endmacro()
 
 if (APPLE)
 #XCODE_VERSION_MAJOR
-  add_definition("-stdlib=libc++")
+  add_definitions("-stdlib=libc++")
 endif()
 
 # include variable description
@@ -165,7 +165,6 @@ if (BUILD_USE_PCH)
     if(${CMAKE_CXX_COMPILER_ID} STREQUAL "Clang" OR ${CMAKE_CXX_COMPILER_ID} STREQUAL "Clang")
       OCCT_INCLUDE_CMAKE_FILE ("adm/cmake/get_invalid_clang_headers")
       GET_INVALID_CLANG_HEADERS(INVALID_HEADERS)
-      MESSAGE("${INVALID_HEADERS}")
       set_property(DIRECTORY PROPERTY COTIRE_PREFIX_HEADER_IGNORE_PATH "${CMAKE_SOURCE_DIR};${CMAKE_BINARY_DIR};${INVALID_HEADERS}")
     endif()
   endif()
